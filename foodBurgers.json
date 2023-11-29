@@ -1,7 +1,7 @@
    [  
      {
-           "img":"./burg.png",
-           "name": "Супер сырный",
+           "pict":"./burg.png",
+           "context": "Супер сырный",
            "kg": "512г",
            "price": "550p",
            "id":1
@@ -11,20 +11,22 @@
           
    
        },
-       {   "img":"./burg_1.png",
-           "name": "Картошка фри'",
+       {   "pict":"./Fried.png",
+           "context": "Картошка фри'",
            "kg": "180г",
-           "price_1": "245p",
+           "price": "245p",
            "id":2
          
    
        },
-       {   "img":"./burg_2.png",
-           "name": "Жгучий хот-дог",
+       {   "pict":"./Hot dog.png",
+           "context": "Жгучий хот-дог",
            "kg": "239г",
-           "price_2": "239p",
+           "price": "239p",
            "id":3
          
        }
        
+       
     ]
+

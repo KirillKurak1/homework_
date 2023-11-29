@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  @mixin style{
+    color: black;
+    font-family: "Nunito";
+    font-style: normal;
+  }
+  .b_result{
+    @include style;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+ 
+  }
+  .container{
+    background: #F9F9F9;
+  }
+.Wr-box{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5%;
+  row-gap: 92px;
+  margin-left: 9%;
+  margin-right: 8%;
+  justify-content: center;
+  margin-top: 8%;
+}

@@ -1,106 +1,59 @@
-
-import React from "react";
-import "../App/App.scss"
-import arrCards from"../../../foodBurgers.json";
-import { useState } from "react";
-import Basket from "../Basket/Basket"
+import  { useState } from "react";
+import arrCards from "../../../foodBurgers.json"
+import arrBox from "../../../second.json"
+import "./App.scss"
+import Card from "../Card/Card";
+import Box from "../Box/Box";
 
 export default function App(){
+
     const [burgers,setBurgers] = useState(arrCards);
-    const [AllproductsCount,setAllproductsCount] = useState(0);
+    const [burgers_1,setBurgers_1] = useState(arrBox)
+    const [allProductsCount,setAllProductsCount]= useState(0)
 
-
-    function editAllproductsCount(amper) {
-        setAllproductsCount(AllproductsCount + amper)
+    function editAllAllProductsCount(amper){
+        setAllProductsCount(allProductsCount + amper);
     }
+    
 
-    function delBasket(id){
-       const copyBurger {...burgers}
-       const newBurgerArr = copyBurger.filter(item => item.id !=id)
-       setBurgers(newBurgerArr);
-    }
-
+    
+  
     if(!burgers){
-        return
-        <h1>Error 404</h1>
+        return <h1>Error 404</h1>
     }
-   
+    if(!burgers_1){
+        return <h1>Error 404</h1>
+    }
+
+
+
+
     return(
-        <div className="container">
-        <h1>{AllproductsCount}</h1>
+       <div className="container">
 
-        <div className="wrapper_gl_cards">
-            {burgers.map((item)=>(
-                <Basket
-                {...item}
-                key={item.id}
-                editAllproductsCount={editAllproductsCount}
-                delBasket={delBasket}
-                />
-            ))}
-            </div>
-
+        <div className="div">
+        <p className="Burgs_n">
+            Бургеры
+        </p>
+        <div className="Wr-box">
+        {burgers_1.map((item)=> <Box {...item} key={item.id} />
+        )}
         </div>
+        
+       </div>
+            <div className="b_result"><p>
+        Корзина
+    </p>
+
+    </div>
+    <h1>{allProductsCount}</h1>
+        {burgers.map((item)=> <Card {...item} key={item.id} editAllAllProductsCount={editAllAllProductsCount} />
+        )}
+       </div>
 
        
-     );
 
 
-
-
-
-
-
-
-
-
-            } 
-//      export default function Allamount(){
-      
-//         const [id,setId] = useState(1)
-//         const [price,setPrice]= useState(0)
-
-//         const a =    function (props){
-//            console.log(props);
-//            return(
-//             <div className={props}>
-//                 <p>
-//                     {props.price}
-//                 </p>
-
-//             </div>
-//            )
-//         };
-
-//    const b =  function (props){
-//     console.log(props);
-//     return(
-//      <div className={props}>
-//          <p>
-//              {props.price_1}
-//          </p>
-
-//      </div>
-//     )
-//  };
-
-//  const c =  function (props){
-//     console.log(props);
-//     return(
-//      <div className={props}>
-//          <p>
-//              {props.price_2}
-//          </p>
-
-//      </div>
-//     )
-//  };
-
-
-
-//         function plusAll(a,b,c){
-//           <div className="block_amount">
-//             a + b + c
-//           </div>
-//         } 
-//      }
+    );
+    
+}
